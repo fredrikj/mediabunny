@@ -1,5 +1,8 @@
 {
-  "name": "mediabunny",
+  "name": "@fredrikj/mediabunny",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "author": "Vanilagy",
   "version": "1.30.1",
   "description": "Pure TypeScript media toolkit for reading, writing, and converting media files, directly in the browser.",
@@ -52,10 +55,10 @@
   "license": "MPL-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Vanilagy/mediabunny.git"
+    "url": "git+https://github.com/fredrikj/mediabunny.git"
   },
   "bugs": {
-    "url": "https://github.com/Vanilagy/mediabunny/issues"
+    "url": "https://github.com/fredrikj/mediabunny/issues"
   },
   "homepage": "https://mediabunny.dev/",
   "funding": {
