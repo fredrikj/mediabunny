@@ -1,5 +1,8 @@
 {
-  "name": "@mediabunny/mp3-encoder",
+  "name": "@fredrikj/mediabunny-mp3-encoder",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "author": "Vanilagy",
   "version": "1.30.1",
   "description": "MP3 encoder extension for Mediabunny, based on LAME.",

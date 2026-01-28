@@ -32,7 +32,7 @@ jobs:
         with:
           node-version: 22
           cache: 'npm'
-          registry-url: https://registry.npmjs.org
+          registry-url: https://npm.pkg.github.com
 
       - name: Update npm
         run: npm install -g npm@latest
@@ -61,8 +61,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh release upload ${{ github.event.release.tag_name }} dist/bundles/mediabunny.cjs dist/bundles/mediabunny.min.cjs dist/bundles/mediabunny.mjs dist/bundles/mediabunny.min.mjs dist/mediabunny.d.ts packages/mp3-encoder/dist/bundles/mediabunny-mp3-encoder.js packages/mp3-encoder/dist/bundles/mediabunny-mp3-encoder.min.js packages/mp3-encoder/dist/bundles/mediabunny-mp3-encoder.mjs packages/mp3-encoder/dist/bundles/mediabunny-mp3-encoder.min.mjs packages/mp3-encoder/dist/mediabunny-mp3-encoder.d.ts
 
-      - name: Publish Mediabunny to npm
+      - name: Publish Mediabunny to GitHub Packages
         run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Publish workspace packages to npm
-        run: npm publish --access public --workspaces 
+      - name: Publish workspace packages to GitHub Packages
+        run: npm publish --access public --workspaces
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
